@@ -1,0 +1,74 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: linear-gradient(to right, #ffffff, #ffc79c); /* Adjust gradient as needed */
+  color: #000000;
+}
+  
+  nav .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  nav .logo img {
+    height: 50px; /* Adjust as needed */
+    margin-right: 1rem;
+  }
+  
+  nav .menu {
+    display: flex;
+    align-items: center;
+  }
+  
+  nav .menu a {
+    color: #000000;
+    text-decoration: none;
+    margin: 0 1rem;
+    position: relative;
+  }
+  
+  nav .menu a:hover::after,
+  nav .menu a.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -5px;
+    height: 2px;
+    background: #fff;
+  }
+  
+  nav .cta {
+    display: flex;
+    align-items: center;
+  }
+  
+  nav .cta .phone {
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+  }
+  
+  nav .cta .phone span {
+    margin-left: 0.5rem;
+  }
+  
+  nav .cta .button {
+    background: #ff5f5f; /* Adjust color as needed */
+    border: none;
+    padding: 0.5rem 1rem;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  nav .cta .button.secondary {
+    background: transparent;
+    border: 2px solid #fff;
+    padding: 0.5rem 1rem;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+  }
