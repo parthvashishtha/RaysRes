@@ -7,90 +7,13 @@ import Typography from "@mui/material/Typography";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import AdbIcon from "@mui/icons-material/Adb";
-import { styled } from "@mui/material/styles";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
+import "./navbar.css";
+
 const pages = ["Home", "About", "Contact Us"];
 
-const HoverButton = styled(Button)({
-  position: "relative",
-  overflow: "hidden",
-  "&::before": {
-    content: '""',
-    position: "absolute",
-    top: 0,
-    left: 0,
-    width: "100%",
-    height: "100%",
-    border: "2px solid transparent",
-    zIndex: 1,
-    transition: "all 0.3s",
-    pointerEvents: "none",
-  },
-  "&:hover::before": {
-    animation: "$borderAnimation 1.5s linear infinite",
-  },
-  "@keyframes borderAnimation": {
-    "0%": {
-      transform: "rotate(0deg)",
-      borderColor: "rgba(255, 255, 255, 0.2)",
-    },
-    "100%": {
-      transform: "rotate(360deg)",
-      borderColor: "rgba(255, 255, 255, 0.6)",
-    },
-  },
-  "&:hover": {
-    backgroundColor: "white",
-    color: "black",
-    fontWeight: 500,
-    zIndex: 2,
-  },
-});
-
-const CustomButton = styled(Button)({
-  display: "inline-block",
-  padding: ".75rem 1.25rem",
-  borderRadius: "10rem",
-  color: "#fff",
-  textTransform: "uppercase",
-  fontSize: "1rem",
-  letterSpacing: ".15rem",
-  transition: "all .3s",
-  position: "relative",
-  overflow: "hidden",
-  zIndex: 1,
-  "&::before": {
-    content: '""',
-    position: "absolute",
-    bottom: 0,
-    left: 0,
-    width: "100%",
-    height: "100%",
-    backgroundColor: "rgba(12, 207, 255, 0.85)",
-    borderRadius: "10rem",
-    zIndex: -2,
-    transition: "all .3s",
-  },
-  "&:hover::before": {
-    width: "100%",
-  },
-  "&:hover": {
-    animation: "$buttonAnimation 0.5s ease-in-out",
-  },
-  "@keyframes buttonAnimation": {
-    "0%": {
-      transform: "scale(1)",
-    },
-    "50%": {
-      transform: "scale(1.1)",
-    },
-    "100%": {
-      transform: "scale(1)",
-    },
-  },
-});
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
@@ -188,22 +111,19 @@ function Navbar() {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page, index) => (
-              <HoverButton
+              <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{
-                  my: 2,
-                  color: "white",
-                  display: "block",
-                  ...(index > 0 && { marginLeft: "60px" }), // Apply 30px margin to all but the first button
-                }}
+                className={`hover-button ${index > 0 ? "margin-left" : ""}`}
               >
                 {page}
-              </HoverButton>
+              </Button>
             ))}
           </Box>
 
-          <CustomButton>Sign up for free electricity</CustomButton>
+          <Button className="custom-button">
+            Sign up for free electricity
+          </Button>
         </Toolbar>
       </Container>
     </AppBar>

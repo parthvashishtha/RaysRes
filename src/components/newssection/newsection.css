@@ -2,3 +2,20 @@
   text-align: center;
   margin: 10px;
 }
+
+.slider {
+  padding: 0 20px;
+}
+
+.card {
+  max-width: 345px;
+  margin: 20px auto;
+}
+
+.media {
+  height: 140px;
+}
+
+.readMoreButton {
+  justify-content: center;
+}

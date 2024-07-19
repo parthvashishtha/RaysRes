@@ -8,26 +8,10 @@ import {
   CardActions,
   Button,
 } from "@mui/material";
-import { makeStyles } from "@mui/styles";
 import { useTrail, animated } from "@react-spring/web";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
-const useStyles = makeStyles({
-  card: {
-    maxWidth: 345,
-    margin: "20px auto",
-  },
-  media: {
-    height: 140,
-  },
-  readMoreButton: {
-    justifyContent: "center",
-  },
-  slider: {
-    padding: "0 20px",
-  },
-});
+import "./newsection.css";
 
 const newsData = [
   {
@@ -43,22 +27,21 @@ const newsData = [
     link: "/news/2",
   },
   {
-    title: "News Title 2",
+    title: "News Title 3",
     date: "2024-07-21",
     image: "https://via.placeholder.com/140",
-    link: "/news/2",
+    link: "/news/3",
   },
   {
-    title: "News Title 2",
+    title: "News Title 4",
     date: "2024-07-21",
     image: "https://via.placeholder.com/140",
-    link: "/news/2",
+    link: "/news/4",
   },
   // Add more news items here
 ];
 
 const NewsSection = () => {
-  const classes = useStyles();
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -108,15 +91,15 @@ const NewsSection = () => {
   };
 
   return (
-    <div id="news-section" className={classes.slider}>
+    <div id="news-section" className="slider">
       <div className="newsHeading">
-        <h1> Solar News</h1>
+        <h1>Solar News</h1>
         <Slider {...settings}>
           {trail.map((style, index) => (
             <animated.div key={index} style={style}>
-              <Card className={classes.card}>
+              <Card className="card">
                 <CardMedia
-                  className={classes.media}
+                  className="media"
                   image={newsData[index].image}
                   title={newsData[index].title}
                 />
@@ -132,7 +115,7 @@ const NewsSection = () => {
                     {newsData[index].date}
                   </Typography>
                 </CardContent>
-                <CardActions className={classes.readMoreButton}>
+                <CardActions className="readMoreButton">
                   <Button
                     size="small"
                     color="primary"

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Box, Typography, IconButton } from "@mui/material";
 import { ChevronLeft, ChevronRight } from "@mui/icons-material";
 import SolarPanelAnimation from "../home_animation/home_animation";
+import "./home_main_slidebar.css";
 
 const images = [
   "https://via.placeholder.com/600x300/FF5733/FFFFFF?text=Image+1",
@@ -10,7 +11,7 @@ const images = [
   "https://via.placeholder.com/600x300/F39C12/FFFFFF?text=Image+4",
 ];
 
-const SLIDE_INTERVAL = 3000; // 5 seconds
+const SLIDE_INTERVAL = 3000; // 3 seconds
 
 const Slider = () => {
   const [currentImage, setCurrentImage] = useState(0);
@@ -29,7 +30,7 @@ const Slider = () => {
       }, 500); // Duration of your transition
       return () => clearTimeout(timer);
     }
-  }, [isTransitioning, currentImage, images.length]);
+  }, [isTransitioning, currentImage]);
 
   useEffect(() => {
     let slideInterval;
@@ -37,7 +38,7 @@ const Slider = () => {
       slideInterval = setInterval(nextSlide, SLIDE_INTERVAL);
     }
     return () => clearInterval(slideInterval);
-  }, [autoSlide]);
+  });
 
   const nextSlide = () => {
     setCurrentImage((prev) => prev + 1);
@@ -63,135 +64,44 @@ const Slider = () => {
   };
 
   return (
-    <Box sx={{ mt: -3, position: "relative", maxWidth: "1500px" }}>
-      <Box
-        sx={{
-          position: "relative",
-          height: "360px",
-          overflow: "hidden",
-          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-        }}
-      >
+    <Box className="slider-container">
+      <Box className="slider-wrapper">
         <Box
-          sx={{
-            display: "flex",
-            transition: isTransitioning ? "transform 0.5s ease-in-out" : "none",
+          className={`slider-content ${isTransitioning ? "transitioning" : ""}`}
+          style={{
             transform: `translateX(${-100 * (currentImage + 1)}%)`,
-            width: `${(images.length + 2) * 100}%`, // Adjusted to accommodate cloned slides
+            width: `${(images.length + 2) * 100}%`,
           }}
         >
-          <Box
-            sx={{
-              minWidth: "100%", // Clone of the last image
-              height: "100%",
-            }}
-          >
+          <Box className="slide">
             <img
               src={images[images.length - 1]}
               alt={`Slide ${images.length}`}
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-              }}
             />
           </Box>
           {images.map((image, index) => (
-            <Box
-              key={index}
-              sx={{
-                minWidth: "100%",
-                height: "100%",
-              }}
-            >
-              <img
-                src={image}
-                alt={`Slide ${index + 1}`}
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                }}
-              />
+            <Box key={index} className="slide">
+              <img src={image} alt={`Slide ${index + 1}`} />
             </Box>
           ))}
-          <Box
-            sx={{
-              minWidth: "100%", // Clone of the first image
-              height: "100%",
-            }}
-          >
-            <img
-              src={images[0]}
-              alt={`Slide 1`}
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-              }}
-            />
+          <Box className="slide">
+            <img src={images[0]} alt={`Slide 1`} />
           </Box>
         </Box>
-        <IconButton
-          onClick={prevSlide}
-          sx={{
-            position: "absolute",
-            left: "8px",
-            top: "50%",
-            transform: "translateY(-50%)",
-            backgroundColor: "rgba(255, 255, 255, 0.5)",
-            "&:hover": {
-              backgroundColor: "rgba(255, 255, 255, 0.8)",
-            },
-          }}
-          size="large"
-        >
+        <IconButton onClick={prevSlide} className="nav-button prev-button">
           <ChevronLeft sx={{ fontSize: "2rem" }} />
         </IconButton>
-        <IconButton
-          onClick={nextSlide}
-          sx={{
-            position: "absolute",
-            right: "8px",
-            top: "50%",
-            transform: "translateY(-50%)",
-            backgroundColor: "rgba(255, 255, 255, 0.5)",
-            "&:hover": {
-              backgroundColor: "rgba(255, 255, 255, 0.8)",
-            },
-          }}
-          size="large"
-        >
+        <IconButton onClick={nextSlide} className="nav-button next-button">
           <ChevronRight sx={{ fontSize: "2rem" }} />
         </IconButton>
-        {/* Indicator Dots */}
-        <Box
-          sx={{
-            position: "absolute",
-            bottom: "10px",
-            left: "50%",
-            transform: "translateX(-50%)",
-            display: "flex",
-            justifyContent: "center",
-          }}
-        >
+        <Box className="indicator-dots">
           {images.map((_, index) => (
             <Typography
               key={index}
               variant="body2"
-              sx={{
-                display: "inline-block",
-                width: "12px",
-                height: "12px",
-                borderRadius: "50%",
-                backgroundColor: index === currentImage ? "#000" : "#ccc",
-                mx: 1,
-                cursor: "pointer",
-                transition: "background-color 0.3s ease-in-out",
-                "&:hover": {
-                  backgroundColor: "#000",
-                },
-              }}
+              className={`indicator-dot ${
+                index === currentImage ? "active" : ""
+              }`}
               onClick={() => goToSlide(index)}
             />
           ))}

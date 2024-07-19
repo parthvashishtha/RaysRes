@@ -1,0 +1,83 @@
+@keyframes moveAndRotateLeft {
+  0% {
+    left: 30%;
+    transform: translateY(-50%) rotate(0deg);
+  }
+  100% {
+    left: 0;
+    transform: translateY(-50%) rotate(-10deg);
+  }
+}
+
+@keyframes moveAndRotateRight {
+  0% {
+    right: 30%;
+    transform: translateY(-50%) rotate(0deg);
+  }
+  100% {
+    right: 0;
+    transform: translateY(-50%) rotate(10deg);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animation-container {
+  position: relative;
+  height: 200px;
+  margin-top: 16px;
+  overflow: hidden;
+}
+
+.message-box {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 15px 25px;
+  border-radius: 5px;
+  animation: fadeIn 3s forwards;
+  opacity: 0;
+  width: 60%;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.stylish-typography {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  background: linear-gradient(45deg, #2196f3, #21cbf3);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.image-left {
+  position: absolute;
+  top: 30%;
+  left: 20%;
+  width: 150px;
+  height: auto;
+  animation: moveAndRotateLeft 3s forwards;
+}
+
+.image-right {
+  position: absolute;
+  top: 30%;
+  right: 20%;
+  width: 150px;
+  height: auto;
+  animation: moveAndRotateRight 3s forwards;
+}
