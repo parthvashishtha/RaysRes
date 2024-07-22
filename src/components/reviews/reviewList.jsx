@@ -1,18 +1,22 @@
 import React from "react";
 import ReviewCard from "./reviewCard";
+import Review1 from "./Review1.jpg";
+import Review2 from "./Review2.jpg";
 
 const reviews = [
   {
-    image: "https://randomuser.me/api/portraits/men/1.jpg",
-    name: "John Doe",
+    image: Review1,
+    name: "Narendra Tomar",
     rating: 5,
-    comment: "Amazing product! Will definitely buy again.",
+    comment:
+      "मैं अपने ऊँचे बिजली के बिलों के लिए एक समाधान ढूंढ रहा था और रेज रूफटॉप ने हमें सबसे अच्छा समाधान दिया।",
   },
   {
-    image: "https://randomuser.me/api/portraits/women/1.jpg",
-    name: "Jane Smith",
+    image: Review2,
+    name: "Bhim Rao",
     rating: 4,
-    comment: "Very good quality, but a bit expensive.",
+    comment:
+      "हमारा हाल ही में रेज रूफटॉप के साथ सोलर इंस्टालेशन का अनुभव बेहतरीन रहा। हमारे मासिक बिजली के खर्चे काफी कम हो गए हैं।",
   },
   {
     image: "https://randomuser.me/api/portraits/men/2.jpg",

@@ -41,7 +41,7 @@ const newsData = [
   // Add more news items here
 ];
 
-const NewsSection = () => {
+const NewSection = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -96,7 +96,7 @@ const NewsSection = () => {
         <h1>Solar News</h1>
         <Slider {...settings}>
           {trail.map((style, index) => (
-            <animated.div key={index} style={style}>
+            <animated.div style={style} key={index}>
               <Card className="card">
                 <CardMedia
                   className="media"
@@ -133,4 +133,4 @@ const NewsSection = () => {
   );
 };
 
-export default NewsSection;
+export default NewSection;

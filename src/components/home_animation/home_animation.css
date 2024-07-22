@@ -1,6 +1,6 @@
 @keyframes moveAndRotateLeft {
   0% {
-    left: 30%;
+    left: 40%;
     transform: translateY(-50%) rotate(0deg);
   }
   100% {
@@ -11,7 +11,7 @@
 
 @keyframes moveAndRotateRight {
   0% {
-    right: 30%;
+    right: 40%;
     transform: translateY(-50%) rotate(0deg);
   }
   100% {
@@ -42,26 +42,58 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
-  background: rgba(255, 255, 255, 0.8);
+  /* background: rgba(255, 255, 255, 0.8); */
   padding: 15px 25px;
   border-radius: 5px;
   animation: fadeIn 3s forwards;
   opacity: 0;
   width: 60%;
   text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
 }
 
-.stylish-typography {
-  font-family: "Open Sans", sans-serif;
-  font-weight: 600;
-  letter-spacing: 0.5px;
+/* .stylish-typography {
+  font-family: "Libre Baskerville", serif !important;
+  font-weight: 520 !important;
+  letter-spacing: 2px !important;
   background: linear-gradient(45deg, #2196f3, #21cbf3);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.stylish-typography .highlight {
+  display: inline-block;
+  background-color: #21cbf3; /* or use the gradient colors if needed 
+  color: #1b1a1a;
+  padding: 2px 4px;
+  border-radius: 0px;
+  text-shadow: none;
+  background-clip: border-box;
+  -webkit-background-clip: border-box;
+} */
+
+.stylish-typography {
+  font-family: "Libre Baskerville", serif !important;
+  font-weight: 520 !important;
+  letter-spacing: 2px !important;
+  background: linear-gradient(45deg, #2196f3, #21cbf3);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.stylish-typography .highlight {
+  display: inline-block;
+  background-color: rgba(33, 203, 243, 0.2); /* Lighten the background color */
+  color: #2196f3; /* Make the text color stand out */
+  padding: 2px 4px;
+  border-radius: 4px;
+  text-shadow: none; /* Remove text shadow */
 }
 
 .image-left {
@@ -80,4 +112,29 @@
   width: 150px;
   height: auto;
   animation: moveAndRotateRight 3s forwards;
+}
+
+.stylish-typography::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #15619f;
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  animation: expand-line 1s forwards;
+}
+
+@keyframes expand-line {
+  0% {
+    width: 0;
+    left: 50%;
+  }
+  100% {
+    width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
