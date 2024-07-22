@@ -1,6 +1,20 @@
+#news-section {
+  background-color: #f0f0f0;
+  padding: 40px 20px;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .newsHeading {
   text-align: center;
-  margin: 10px;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: 200;
+  font-size: 23px;
+  padding: 10px 20px;
+  border-radius: 0px;
 }
 
 .slider {
@@ -10,6 +24,9 @@
 .card {
   max-width: 345px;
   margin: 20px auto;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
 }
 
 .media {

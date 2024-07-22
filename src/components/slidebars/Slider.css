@@ -1,0 +1,144 @@
+.slider {
+  margin-top: -1.5%;
+  left: -1.42%;
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
+}
+
+.slider-inner {
+  position: absolute;
+  display: flex;
+  transition: transform 2s ease-in-out;
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  position: absolute;
+  min-width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.slide::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(
+    0,
+    0,
+    0,
+    0.3
+  ); /* Adjust the opacity to make it darker or lighter */
+  z-index: 1;
+}
+
+.slide-image {
+  position: absolute;
+  opacity: 0.9;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slide-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 2; /* Ensure it is above the overlay */
+}
+
+.slide-text {
+  position: absolute;
+  font-weight: 680;
+  font-size: 37px;
+  left: 3%;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 0px;
+  align-self: flex-start;
+}
+
+.slide-text .text1 {
+  /* color: blueviolet; */
+  display: inline-block;
+  background-color: rgba(152, 163, 165, 0.2); /* Lighten the background color */
+  color: #2196f3; /* Make the text color stand out */
+  padding: 2px 4px;
+  border-radius: 4px;
+  text-shadow: none;
+}
+
+.slide-button {
+  position: absolute;
+  padding: 10px 20px;
+  font-size: 20px;
+  margin-top: 20%;
+  left: 5%;
+  margin-bottom: 2%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  align-self: flex-end;
+}
+
+.prev-button,
+.next-button {
+  position: absolute;
+  top: 50%;
+  width: 3.2%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  z-index: 3;
+}
+
+.prev-button {
+  left: 30px;
+}
+
+.next-button {
+  right: 40px;
+}
+
+.indicators {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.indicator.active {
+  background-color: #fff;
+}
