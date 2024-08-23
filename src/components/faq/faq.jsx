@@ -23,7 +23,7 @@ const FAQ = () => {
           question:
             "What is the correct size of a solar panel, and how much space is required?",
           answer:
-            "The space required depends on the size of the solar system you choose. Here are the general guidelines- \n  1. KW System Requires approximately 50 square feet of space. \n 2 KW System Requires approximately 100 square feet of space.\n 3 KW System Requires approximately 150 square feet of space.",
+            "The space required depends on the size of the solar system you choose. Here are the general guidelines: 1. KW System Requires approximately 50 square feet of space. 2 KW System Requires approximately 100 square feet of space. 3 KW System Requires approximately 150 square feet of space.",
         },
       ],
     },
@@ -32,7 +32,7 @@ const FAQ = () => {
       questions: [
         {
           id: 3,
-          question: " When will the subsidy be credited?",
+          question: "When will the subsidy be credited?",
           answer:
             "The subsidy will be credited within 3 months after commissioning and approval.",
         },
@@ -59,7 +59,7 @@ const FAQ = () => {
           question:
             "How should I make the payment—after subtracting the subsidy or the full amount?",
           answer:
-            "For direct payment, you must pay the full amount according to our timeline:1. Rs. 2100 as a booking amount. 2. 80% before installation, after approvals and commissioning. 3. 20% after the completion of the project. For the financing option, you must pay the EMI on the remaining amount.",
+            "For direct payment, you must pay the full amount according to our timeline: 1. Rs. 2100 as a booking amount. 2. 80% before installation, after approvals and commissioning. 3. 20% after the completion of the project. For the financing option, you must pay the EMI on the remaining amount.",
         },
         {
           id: 8,
@@ -161,7 +161,7 @@ const FAQ = () => {
   return (
     <div className="faq-wrapper">
       <div className="faq-container">
-        <h1>Frequently Asked Questions</h1>
+        <h1 className="faq-heading">Frequently Asked Questions</h1>
         <div className="faq-buttons">
           {questionsData.map((data, index) => (
             <button

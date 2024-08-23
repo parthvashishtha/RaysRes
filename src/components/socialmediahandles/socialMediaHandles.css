@@ -1,0 +1,52 @@
+.social-media-wrapper {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.social-media-heading {
+  font-size: 2rem;
+  margin-bottom: 0px;
+  color: #333;
+  line-height: 0.5;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  margin-top: 2%;
+}
+
+.social-media-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin: 40px 40px;
+}
+
+.social-media-icon {
+  font-size: 4rem;
+  color: #333;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-media-icon:hover {
+  transform: scale(1.2);
+  color: #0073b1;
+}
+
+@media (max-width: 768px) {
+  .social-media-container {
+    gap: 15px;
+  }
+
+  .social-media-icon {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .social-media-container {
+    gap: 10px;
+  }
+
+  .social-media-icon {
+    font-size: 1.2rem;
+  }
+}

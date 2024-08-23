@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Outfit:wght@100..900&family=Space+Grotesk:wght@300..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+.section {
+  position: relative;
+  padding: 50px 20px;
+  background: #e1eff7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  min-height: 100vh;
+  font-family: "Inter", sans-serif !important;
+}
+
+.benefit {
+  width: 350px;
+  padding: 20px;
+  margin: 30px 0;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  position: relative;
+}
+
+.benefitText {
+  font-family: "Inter", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #333;
+  line-height: 1.4;
+  display: flex;
+}
+
+.benefitSubText {
+  font-family: "Inter", sans-serif !important;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #333;
+  line-height: 1.4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.left::before,
+.right::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 10px solid transparent;
+}
+
+.left::before {
+  right: 100%;
+  border-right: 10px solid white;
+}
+
+.right::before {
+  left: 100%;
+  border-left: 10px solid white;
+}
+.heading {
+  font-size: 3rem;
+  color: #333;
+  margin-bottom: 25px;
+  text-align: center;
+  margin-top: -2%;
+}
+
+.heading::after {
+  content: "";
+  position: absolute;
+  top: 9%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 65%;
+  height: 3px;
+  background: linear-gradient(to right, #262627, #595a5b);
+  border-radius: 2px;
+}
+
+.imgStyle {
+  position: absolute;
+  margin-top: 17%;
+  width: 35%;
+  height: 40%;
+}

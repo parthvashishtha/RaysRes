@@ -3,6 +3,7 @@ import "./Slider.css";
 import slideone from "./slideone.jpg";
 import slidetwo from "./slidetwo.jpg";
 import slideThree from "./slideThree.jpg";
+// import slidenew from "./slidenew.jpg";
 
 const images = [
   {
@@ -23,7 +24,7 @@ const images = [
         <div className="text">Your Solar , Your Roof, Our Responsibility</div>
       </span>
     ),
-    button: "Discover",
+    button: "Get Quote",
   },
   {
     src: slideThree,
@@ -35,7 +36,7 @@ const images = [
         </div>
       </span>
     ),
-    button: "Read More",
+    button: "Get Quote",
   },
 ];
 
