@@ -1,43 +1,37 @@
 .question-container {
-  margin: 10px 0;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
 .question {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  background-color: #f1f1f1;
+  padding: 15px;
+  background-color: #e0e0e0;
   cursor: pointer;
-  transition: background-color 0.3s;
-  font-size: 16px;
-  font-weight: 600;
-  color: #333;
+  font-weight: 300;
+  font-family: "Outfit", sans-serif;
 }
 
 .question:hover {
-  background-color: #e0e0e0;
+  background-color: #d0d0d0;
 }
 
 .answer {
-  padding: 0 10px; /* Removed top and bottom padding to avoid initial opening */
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-top: none;
-  height: 0;
+  padding: 0 15px;
+  background-color: white;
   overflow: hidden;
-  transition: height 0.3s ease, padding 0.3s ease;
-  font-size: 14px;
-  font-weight: 400;
-  color: #555;
+  transition: max-height 0.5s ease;
+  font-family: "Outfit", sans-serif;
 }
 
 .answer.open {
-  padding: 10px; /* Re-added padding when open */
-  height: auto;
+  padding: 15px;
+  max-height: 500px;
 }
 
 .icon {
-  margin-left: 10px;
-  font-weight: bold;
+  font-size: 1.5em;
 }

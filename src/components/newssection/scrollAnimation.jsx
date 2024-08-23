@@ -1,10 +1,10 @@
-// ScrollAnimation.jsx
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 
 const ScrollAnimation = ({ children }) => {
   const controls = useAnimation();
   const sectionRef = useRef(null);
+  const [hasAnimated, setHasAnimated] = useState(false);
 
   const handleScroll = () => {
     if (!sectionRef.current) return;
@@ -12,21 +12,20 @@ const ScrollAnimation = ({ children }) => {
     const rect = sectionRef.current.getBoundingClientRect();
     const windowHeight = window.innerHeight;
 
-    if (rect.top <= windowHeight && rect.bottom >= 0) {
+    if (rect.top <= windowHeight && rect.bottom >= 0 && !hasAnimated) {
       controls.start({ opacity: 1, y: 0 });
-    } else {
-      controls.start({ opacity: 0, y: 50 });
+      setHasAnimated(true);
     }
   };
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Check visibility on mount
+    handleScroll();
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  });
+  }, [hasAnimated, controls]);
 
   return (
     <motion.section
@@ -34,6 +33,7 @@ const ScrollAnimation = ({ children }) => {
       animate={controls}
       initial={{ opacity: 0, y: 50 }}
       transition={{ duration: 0.5, ease: "easeInOut" }}
+      style={{ opacity: 1 }} // Ensure opacity stays 1 after animation
     >
       {children}
     </motion.section>

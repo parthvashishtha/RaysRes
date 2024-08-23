@@ -52,31 +52,8 @@
   /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
 }
 
-/* .stylish-typography {
-  font-family: "Libre Baskerville", serif !important;
-  font-weight: 520 !important;
-  letter-spacing: 2px !important;
-  background: linear-gradient(45deg, #2196f3, #21cbf3);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.stylish-typography .highlight {
-  display: inline-block;
-  background-color: #21cbf3; /* or use the gradient colors if needed 
-  color: #1b1a1a;
-  padding: 2px 4px;
-  border-radius: 0px;
-  text-shadow: none;
-  background-clip: border-box;
-  -webkit-background-clip: border-box;
-} */
-
 .stylish-typography {
-  font-family: "Libre Baskerville", serif !important;
+  /* font-family: "Libre Baskerville", serif !important; */
   font-weight: 520 !important;
   letter-spacing: 2px !important;
   background: linear-gradient(45deg, #2196f3, #21cbf3);
@@ -89,11 +66,11 @@
 
 .stylish-typography .highlight {
   display: inline-block;
-  background-color: rgba(33, 203, 243, 0.2); /* Lighten the background color */
-  color: #2196f3; /* Make the text color stand out */
+  background-color: rgba(33, 203, 243, 0.2);
+  color: #2196f3;
   padding: 2px 4px;
   border-radius: 4px;
-  text-shadow: none; /* Remove text shadow */
+  /* text-shadow: none; */
 }
 
 .image-left {

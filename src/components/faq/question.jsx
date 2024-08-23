@@ -1,19 +1,15 @@
-import React, {
-  useRef,
-  useEffect,
-  useState,
-} from "react"; /* Added useRef, useEffect, useState */
+import React, { useRef, useEffect, useState } from "react";
 import "./question.css";
 
 const Question = ({ question, isActive, onClick }) => {
   const answerRef = useRef(null);
-  const [height, setHeight] = useState("auto"); // Default to 'auto' initially
+  const [height, setHeight] = useState(0);
 
   useEffect(() => {
     if (isActive) {
-      setHeight(`${answerRef.current.scrollHeight}px`); // Set height based on content
+      setHeight(answerRef.current.scrollHeight);
     } else {
-      setHeight("0"); // Collapse height when not active
+      setHeight(0);
     }
   }, [isActive]);
 
@@ -26,7 +22,7 @@ const Question = ({ question, isActive, onClick }) => {
       <div
         ref={answerRef}
         className={`answer ${isActive ? "open" : ""}`}
-        style={{ height: height }} // Apply height dynamically
+        style={{ height: `${height}px` }}
       >
         {question.answer}
       </div>

@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect, useState, useRef } from "react";
 import ReviewCard from "./reviewCard";
 import Review1 from "./Review1.jpg";
 import Review2 from "./Review2.jpg";
+import "./review.css";
 
 const reviews = [
   {
@@ -19,35 +20,65 @@ const reviews = [
       "हमारा हाल ही में रेज रूफटॉप के साथ सोलर इंस्टालेशन का अनुभव बेहतरीन रहा। हमारे मासिक बिजली के खर्चे काफी कम हो गए हैं।",
   },
   {
-    image: "https://randomuser.me/api/portraits/men/2.jpg",
-    name: "Alice Johnson",
+    image: Review1,
+    name: "Holaram",
     rating: 5,
-    comment: "Exceeded my expectations. Highly recommend!",
+    comment: "GG",
   },
   {
-    image: "https://randomuser.me/api/portraits/men/3.jpg",
-    name: "Michael Brown",
+    image: Review2,
+    name: "Holaram",
     rating: 4,
-    comment: "Good service, but delivery was slow.",
+    comment: "GG",
   },
   {
-    image: "https://randomuser.me/api/portraits/women/2.jpg",
-    name: "Emily Davis",
+    image: Review1,
+    name: "Holaram",
     rating: 5,
-    comment: "Fantastic experience, will shop here again!",
+    comment: "GG",
   },
 ];
 
 const ReviewList = () => {
+  const [extendedReviews, setExtendedReviews] = useState([]);
+  const reviewListRef = useRef(null);
+
+  useEffect(() => {
+    const cloneCount = Math.min(reviews.length, 3);
+    setExtendedReviews([...reviews, ...reviews.slice(0, cloneCount)]);
+  }, []);
+
+  useEffect(() => {
+    const reviewList = reviewListRef.current;
+    if (!reviewList) return;
+
+    const scroll = () => {
+      if (
+        reviewList.scrollLeft >=
+        (reviewList.scrollWidth - reviewList.clientWidth) / 2
+      ) {
+        reviewList.scrollLeft = 0;
+      } else {
+        reviewList.scrollLeft += 1;
+      }
+    };
+
+    const intervalId = setInterval(scroll, 20);
+
+    return () => clearInterval(intervalId);
+  }, []);
+
   return (
     <div className="review-list-wrapper">
       <h2 className="review-heading">
         <span>90%</span> of customers recommend us
       </h2>
-      <div className="review-list">
-        {reviews.map((review, index) => (
-          <ReviewCard key={index} review={review} />
-        ))}
+      <div className="review-list-container">
+        <div className="review-list" ref={reviewListRef}>
+          {extendedReviews.map((review, index) => (
+            <ReviewCard key={index} review={review} />
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -12,37 +12,105 @@ import { useTrail, animated } from "@react-spring/web";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./newsection.css";
+import newsimg1 from "./newsimg1.jpg";
+import newsimg2 from "./newsimg2.jpg";
+import newsimg3 from "./newsimg3.jpg";
+import newsimg4 from "./newsimg4.jpg";
+import { useLanguage } from "../../LanguageContext";
+
+const translations = {
+  en: {
+    newsHeading: "Solar News",
+    readMore: "Read More",
+    newsItems: [
+      {
+        title:
+          "India makes major progress on residential solar rooftop scheme PM Surya Ghar",
+        date: "2024-07-22",
+        link: "https://energy.economictimes.indiatimes.com/news/renewable/india-makes-major-progress-on-residential-solar-rooftop-scheme-pm-surya-ghar/111913518#:~:text=PM%20Surya%20Ghar%20scheme%2C%20a,India's%20shift%20toward%20sustainable%20energy.",
+      },
+      {
+        title:
+          "Budget 2024 Expectation: PM Surya Ghar Muft Bijli Yojana – Explained",
+        date: "2024-07-21",
+        link: "https://www.financialexpress.com/budget/budget-2024-expectation-pm-surya-ghar-muft-bijli-yojana-explained-3559510/",
+      },
+      {
+        title:
+          "More than one lakh people register for PM Suryaghar Yojana in Rajasthan so far",
+        date: "2024-07-21",
+        link: "https://www.pv-magazine-india.com/2024/03/11/more-than-one-lakh-people-register-for-pm-suryaghar-yojana-in-rajasthan-so-far/",
+      },
+      {
+        title:
+          "PM Surya Ghar: Govt buildings to achieve full rooftop solar saturation by 2025",
+        date: "2024-07-21",
+        link: "https://energy.economictimes.indiatimes.com/news/renewable/pm-surya-ghar-govt-buildings-to-achieve-full-rooftop-solar-saturation-by-2025/111528217",
+      },
+    ],
+  },
+  hi: {
+    newsHeading: "सोलर समाचार",
+    readMore: "अधिक पढ़ें",
+    newsItems: [
+      {
+        title:
+          "भारत ने आवासीय सोलर रूफटॉप योजना पीएम सूर्य घर में प्रमुख प्रगति की",
+        date: "2024-07-22",
+        link: "https://energy.economictimes.indiatimes.com/news/renewable/india-makes-major-progress-on-residential-solar-rooftop-scheme-pm-surya-ghar/111913518#:~:text=PM%20Surya%20Ghar%20scheme%2C%20a,India's%20shift%20toward%20sustainable%20energy.",
+      },
+      {
+        title:
+          "बजट 2024 अपेक्षा: पीएम सूर्य घर मुफ़्त बिजली योजना – स्पष्ट किया गया",
+        date: "2024-07-21",
+        link: "https://www.financialexpress.com/budget/budget-2024-expectation-pm-surya-ghar-muft-bijli-yojana-explained-3559510/",
+      },
+      {
+        title:
+          "राजस्थान में अब तक पीएम सूर्यघर योजना के लिए एक लाख से अधिक लोग पंजीकृत",
+        date: "2024-07-21",
+        link: "https://www.pv-magazine-india.com/2024/03/11/more-than-one-lakh-people-register-for-pm-suryaghar-yojana-in-rajasthan-so-far/",
+      },
+      {
+        title:
+          "पीएम सूर्य घर: सरकारी भवन 2025 तक पूर्ण रूफटॉप सोलर सैचुरेशन प्राप्त करेंगे",
+        date: "2024-07-21",
+        link: "https://energy.economictimes.indiatimes.com/news/renewable/pm-surya-ghar-govt-buildings-to-achieve-full-rooftop-solar-saturation-by-2025/111528217",
+      },
+    ],
+  },
+};
 
 const newsData = [
   {
-    title: "News Title 1",
-    date: "2024-07-20",
-    image: "https://via.placeholder.com/140",
-    link: "/news/1",
+    title: newsimg1,
+    date: "2024-07-22",
+    image: newsimg1,
+    link: "https://energy.economictimes.indiatimes.com/news/renewable/india-makes-major-progress-on-residential-solar-rooftop-scheme-pm-surya-ghar/111913518#:~:text=PM%20Surya%20Ghar%20scheme%2C%20a,India's%20shift%20toward%20sustainable%20energy.",
   },
   {
-    title: "News Title 2",
+    title: newsimg2,
     date: "2024-07-21",
-    image: "https://via.placeholder.com/140",
-    link: "/news/2",
+    image: newsimg2,
+    link: "https://www.financialexpress.com/budget/budget-2024-expectation-pm-surya-ghar-muft-bijli-yojana-explained-3559510/",
   },
   {
-    title: "News Title 3",
+    title: newsimg3,
     date: "2024-07-21",
-    image: "https://via.placeholder.com/140",
-    link: "/news/3",
+    image: newsimg3,
+    link: "https://www.pv-magazine-india.com/2024/03/11/more-than-one-lakh-people-register-for-pm-suryaghar-yojana-in-rajasthan-so-far/",
   },
   {
-    title: "News Title 4",
+    title: newsimg4,
     date: "2024-07-21",
-    image: "https://via.placeholder.com/140",
-    link: "/news/4",
+    image: newsimg4,
+    link: "https://energy.economictimes.indiatimes.com/news/renewable/pm-surya-ghar-govt-buildings-to-achieve-full-rooftop-solar-saturation-by-2025/111528217",
   },
-  // Add more news items here
 ];
 
 const NewSection = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const { language } = useLanguage(); // Use the global language state
 
   useEffect(() => {
     const handleScroll = () => {
@@ -93,7 +161,7 @@ const NewSection = () => {
   return (
     <div id="news-section" className="slider">
       <div className="newsHeading">
-        <h1>Solar News</h1>
+        <h1>{translations[language].newsHeading}</h1>
         <Slider {...settings}>
           {trail.map((style, index) => (
             <animated.div style={style} key={index}>
@@ -101,27 +169,27 @@ const NewSection = () => {
                 <CardMedia
                   className="media"
                   image={newsData[index].image}
-                  title={newsData[index].title}
+                  title={translations[language].newsItems[index].title}
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">
-                    {newsData[index].title}
+                    {translations[language].newsItems[index].title}
                   </Typography>
                   <Typography
                     variant="body2"
                     color="textSecondary"
                     component="p"
                   >
-                    {newsData[index].date}
+                    {translations[language].newsItems[index].date}
                   </Typography>
                 </CardContent>
                 <CardActions className="readMoreButton">
                   <Button
                     size="small"
                     color="primary"
-                    href={newsData[index].link}
+                    href={translations[language].newsItems[index].link}
                   >
-                    Read More
+                    {translations[language].readMore}
                   </Button>
                 </CardActions>
               </Card>

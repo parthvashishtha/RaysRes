@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Box, Typography } from "@mui/material";
 import animationHomeImg from "../home_animation/animation_home_img.png";
+// import animationSvg from "./soolar.png";
 import "./home_animation.css";
 
 const SolarPanelAnimation = () => {

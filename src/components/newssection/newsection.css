@@ -9,7 +9,7 @@
 
 .newsHeading {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
   color: #333;
   font-weight: 200;
   font-size: 23px;
@@ -17,12 +17,18 @@
   border-radius: 0px;
 }
 
+.newsHeading .text {
+  font-size: 20px;
+  font-weight: 500;
+}
+
 .slider {
   padding: 0 20px;
 }
 
 .card {
-  max-width: 345px;
+  max-width: 430px;
+  max-height: 360px;
   margin: 20px auto;
   background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -30,7 +36,7 @@
 }
 
 .media {
-  height: 140px;
+  height: 200px;
 }
 
 .readMoreButton {
