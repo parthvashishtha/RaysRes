@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/RaysRes/static/css/main.8d01101a.css",
+    "main.js": "/RaysRes/static/js/main.f0e73b1e.js",
+    "static/media/video.mp4": "/RaysRes/static/media/video.a54eac9db59a8154eda3.mp4",
+    "static/media/slidetwo.jpg": "/RaysRes/static/media/slidetwo.57e5385e6ef2cf619b5b.jpg",
+    "static/media/newsimg2.jpg": "/RaysRes/static/media/newsimg2.7a5dd5dd304e94591d5f.jpg",
+    "static/media/newsimg3.jpg": "/RaysRes/static/media/newsimg3.f9f70865fc18c44bc8db.jpg",
+    "static/media/newsimg4.jpg": "/RaysRes/static/media/newsimg4.cefd06ca4314984dd471.jpg",
+    "static/media/main.png": "/RaysRes/static/media/main.cbb8fa4a7f2fc92cb9bf.png",
+    "static/media/homeimg.png": "/RaysRes/static/media/homeimg.76f47b70b43154213431.png",
+    "static/media/form_img.png": "/RaysRes/static/media/form_img.4ebe263eae0098638d45.png",
+    "static/media/newsimg1.jpg": "/RaysRes/static/media/newsimg1.362c72de838760d5454b.jpg",
+    "static/media/slideone.jpg": "/RaysRes/static/media/slideone.488421b9020f59c32b52.jpg",
+    "static/media/Ad2.jpg": "/RaysRes/static/media/Ad2.73b3429cb12bd5a38acb.jpg",
+    "static/media/Ad1.jpg": "/RaysRes/static/media/Ad1.bb16ab459b9b7e70c5e9.jpg",
+    "static/media/slideThree.jpg": "/RaysRes/static/media/slideThree.cc77d3dd0acfb69b0e77.jpg",
+    "static/media/Review1.jpg": "/RaysRes/static/media/Review1.22752000022bf77cc9ad.jpg",
+    "static/media/chaticon.png": "/RaysRes/static/media/chaticon.c7c899ec294b314016d9.png",
+    "static/media/Review2.jpg": "/RaysRes/static/media/Review2.e1ddf7acf1606fd6838a.jpg",
+    "static/media/animation_home_img.png": "/RaysRes/static/media/animation_home_img.1d0f238436aeb179a97e.png",
+    "static/media/subHeading3.png": "/RaysRes/static/media/subHeading3.759ab5adbbd7e89ef9d3.png",
+    "index.html": "/RaysRes/index.html",
+    "static/media/slick.svg": "/RaysRes/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/RaysRes/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/RaysRes/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/RaysRes/static/media/slick.295183786cd8a1389865.woff",
+    "main.8d01101a.css.map": "/RaysRes/static/css/main.8d01101a.css.map",
+    "main.f0e73b1e.js.map": "/RaysRes/static/js/main.f0e73b1e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8d01101a.css",
+    "static/js/main.f0e73b1e.js"
+  ]
+}
